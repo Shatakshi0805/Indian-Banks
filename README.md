@@ -1,7 +1,7 @@
 # Indian-Banks
  Methods Used: <br><br>
  <h3> Task1: To get all branch details of specific bank </h3>
- 1. User enters the bank name in the query. <br>
+ 1. User enters the bankName in the query. Like "/api/v1/banks?bankName=HDFC BANK" with "/api/v1/banks" as the root URL<br>
 2. Branch details are present in the Branches table. Which does not contain a bank name but does contain a bank id which is common in banks and branches tables.<br>
 3. If i compute bank id from bank name then branch details can be easily computed associated with that bank id<br>
 4. Bank id can be easily computed by running `<b>select bank.id from banks where bank.name = bankNameEnteredByuser</b>`<br>
@@ -13,7 +13,8 @@
 
         
 <h3> Task2: To get branch details of specific branch </h3><br>
-1. User enters bank name and branch name<br>
+1. User enters bank name and branch name. As in "/api/v1/banks?bankName=ABHYUDAYA COOPERATIVE BANK LIMITED&branchName=BAIL BAZAR" with "/api/v1/banks" as the root URL
+<br>
 2. Branches table does not contain banks name. But bank_id is common in both branches and banks tables.<br> 
 3. Inner Join on common ids would help in combining both tables so that the new table contains bank name along with associated branches and its details.<br>
 4. Then further chain the inner join query with WHERE clause mentioning that we only want that bank and branch details which are entered by the user.<br>
